@@ -1,0 +1,467 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Orbitron', sans-serif;
+}
+
+header {
+    text-align: center;
+    color: white;
+    height: 50px;
+    animation: camaleon 5s linear infinite;
+}
+h1{
+    font-family: 'Orbitron', sans-serif;
+}
+body {
+
+    background-image: url("/Cartelera/recursos/img/fondo4.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
+
+@keyframes camaleon {
+    from {
+        background-color: red;
+    }
+
+    25% {
+        background-color: indigo;
+    }
+
+    50% {
+        background-color: peru;
+    }
+
+    75% {
+        background-color: green;
+    }
+
+    to {
+        background-color: blue;
+    }
+}
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+}
+
+article {
+    margin: 20px;
+    width: 33%;
+}
+
+/* Mario Articulo */
+/* --- */
+
+.mario {
+    position: relative;
+    width: 45%;
+    transition: all .3s ease;
+}
+
+/* Portada mario */
+.mario img:first-child {
+    box-shadow: 0 60px 60px -60px rgba(0, 30, 255, 05);
+    border-radius: 4px;
+    object-fit: cover;
+    width: 100%;
+}
+
+/* Mario saltando */
+.mario img:last-child {
+    position: absolute;
+    width: 45%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transform: translateY(25%px);
+    transition: .3 ease;
+    opacity: 0;
+}
+
+.mario:hover {
+    transform:
+        perspective(250px) rotateX(10deg) translateY(-5%) translateZ(0);
+
+}
+
+/* Efecto sombra */
+.mario::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background-image:
+        linear-gradient(to bottom,
+            transparent 10%,
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0) 95%);
+    opacity: 0;
+    transition: all .3s ease;
+}
+
+.mario:hover::before {
+    opacity: 1;
+}
+
+.mario:hover img:last-child {
+    opacity: 1;
+    transform: translateY(10%);
+}
+
+/*
+----
+*/
+/* Donnie Darko */
+.darko {
+    position: relative;
+    height: 300px;
+    width: 45%;
+
+}
+
+.darko .mask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .5s .3s;
+}
+
+.darko .frente {
+    transform: perspective(600px)rotateY(0deg);
+    box-shadow: 0 5px 10px #000;
+}
+
+.darko .frente img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.darko .frente h3 {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    background: rgba(0, 0, 0, .4);
+    text-align: center;
+}
+
+.darko .dorso {
+    transform: perspective(600px) rotateY(180deg);
+    background: rgb(3, 35, 54);
+    padding: 15px;
+    color: #f3f3f3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.darko .dorso h3 {
+    font-size: 30px;
+    margin-top: 20px;
+    letter-spacing: 2px;
+}
+
+.darko .dorso p {
+    letter-spacing: 1px;
+    font-size: .8em;
+}
+
+.darko:hover .frente {
+    transform: perspective(600px)rotateY(180deg);
+}
+
+.darko:hover .dorso {
+    transform: perspective(600px)rotateY(360deg);
+}
+a.info {
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 20px;
+    padding: 7px 14px;
+    background:cornsilk;
+    color: blueviolet;
+    text-transform: uppercase;
+    -webkit-box-shadow: 0 0 1px #000;
+    -moz-box-shadow: 0 0 1px #000;
+    box-shadow: 0 0 1px #000;
+ }
+a.info:hover {
+    -webkit-box-shadow: 0 0 5px yellow;
+    -moz-box-shadow: 0 0 5px yellow;
+    box-shadow: 0 0 5px yellow;
+ } 
+/*---
+----*/
+/* Odiesea al espacio */
+.odisea {
+    display: flex;
+    width: 45%;
+    height: 300px;
+    transition: all 2s ease;
+    opacity: .5;
+    filter: blur(10px);
+}
+
+.odisea:hover {
+    opacity: 1;
+    filter: blur(0);
+}
+
+/* 
+---
+-- */
+.rapido {
+    position: relative;
+    transition: all .3s ease;
+}
+
+.rapido img {
+    border-radius: 8px;
+    transition: all 0.4s ease-in-out 0.5s;
+}
+
+.rapido .mask {
+    text-align: center;
+    background-color: rgba(65, 106, 194, 0.5);
+    height: 100%;
+    width: 48%;
+    border-radius: 8px;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    transition: all 0.3s ease-in 0.4s
+}
+
+.rapido .mask h3 {
+    color: lightcoral;
+    text-shadow: 2px 2px 2px gray;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    border-bottom: 2px solid rgba(255, 68, 0, 0.541);
+    background: transparent;
+    margin: 20px 40px 0px 40px;
+    transform: scale(10);
+    transition: all 0.3s ease-in-out 0.1s;
+}
+
+.rapido .mask p {
+    color: bisque;
+    text-shadow: 1px 1px #000;
+    margin-top: 30px;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    transform: scale(10);
+    transition: all 0.3s ease-in-out 0.2s;
+}
+
+.rapido:hover .mask {
+    filter: alpha(opacity=100);
+    opacity: 1;
+    transition-delay: 0s;
+}
+
+.rapido:hover img {
+    transition-delay: 0s;
+}
+
+.rapido:hover h3 {
+    filter: alpha(opacity=100);
+    opacity: 1;
+    transform: scale(1);
+    transition-delay: 0.1s;
+}
+
+.rapido:hover p {
+    filter: alpha(opacity=100);
+    opacity: 1;
+    transform: scale(1);
+    transition-delay: 0.2s;
+}
+
+/* 
+ ---- 
+ -----  */
+/* Puan */
+.puan {
+    display: flex;
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+}
+
+.puan img {
+    transition: all 0.3s ease-in-out;
+}
+
+.puan .mask {
+    width: 70%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    background-color: rgba(17, 15, 15, 0.651);
+    filter: alpha(opacity=100);
+    opacity: 1;
+    transform: translateX(-300px);
+    transition: all 0.3s ease-in-out;
+}
+
+.puan .mask h3 {
+    color: cornflowerblue;
+    margin-bottom: 10px;
+    border-bottom: 1px solid cadetblue;
+}
+
+.puan .mask p {
+    font-size: 0.7em;
+    font-weight: bold;
+    padding: 5px;
+    letter-spacing: .5px;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    color: wheat;
+    transition: all 0.2s linear;
+}
+
+.puan:hover .mask {
+    transform: translateX(0px);
+}
+
+.puan:hover img {
+    transform: translateX(400px);
+}
+
+.puan:hover p {
+    filter: alpha(opacity=100);
+    opacity: 1;
+}
+
+/* 
+----
+---- */
+/* Hipnosis */
+.hipnosis {
+    display: flex;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    cursor: default;
+}
+
+.hipnosis img {
+    transform: scaleY(1);
+    transition: all 0.7s ease-in-out;
+
+}
+
+.hipnosis .mask {
+    background-color: rgba(255, 231, 179, 0.5);
+    transition: all 0.5s linear;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    width: 90%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+}
+
+.hipnosis .mask h3 {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    background: transparent;
+    margin-bottom: 5px;
+    transform: scale(0);
+    color: indigo;
+    transition: all 0.5s linear;
+    filter: alpha(opacity=0);
+    opacity: 0;
+}
+
+.hipnosis p {
+    color: rgb(54, 54, 190);
+    filter: alpha(opacity=0);
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.5s linear;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    padding: 5px;
+}
+
+.hipnosis:hover img {
+    transform: scale(10);
+    filter: alpha(opacity=0);
+    opacity: 0;
+}
+
+.hipnosis:hover .mask {
+    filter: alpha(opacity=100);
+    opacity: 1;
+}
+
+.hipnosis:hover h3,
+.hipnosis:hover p,
+.hipnosis:hover {
+    transform: scale(1);
+    filter: alpha(opacity=100);
+    opacity: 1;
+}
+
+hr {
+    color: coral;
+    border-style: solid;
+    margin: 0 50px;
+}
+
+.mj {
+    position: relative;
+    top: 18px;
+    left: 0;
+    width: 150px;
+    animation: moonwalk 8s linear infinite alternate;
+}
+
+.mj img {
+    width: 150px;
+    height: 120px;
+}
+
+@keyframes moonwalk {
+   from{
+    left:0;
+   
+  }
+
+   to{
+    left:800px;
+    
+  }
+
+    
+}
