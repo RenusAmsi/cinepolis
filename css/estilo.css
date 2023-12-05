@@ -16,7 +16,7 @@ h1{
 }
 body {
 
-    background-image: url("/Cartelera/recursos/img/fondo4.jpg");
+    background-image: url("./recursos/img/fondo4.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
